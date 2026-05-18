@@ -60,8 +60,9 @@ export default function HeroSection() {
       <div
         className="relative z-10 w-full"
         style={{
-          paddingTop: "clamp(60px, 7vw, 120px)",
-          paddingBottom: "clamp(60px, 7vw, 120px)",
+          paddingTop: "clamp(110px, 9vw, 170px)",
+          paddingBottom: "clamp(110px, 9vw, 170px)",
+          minHeight: "78vh",
         }}
       >
         <div className="page-container">
@@ -123,7 +124,7 @@ export default function HeroSection() {
             </h1>
 
             <a
-              href="#"
+              href="#about"
               style={{
                 color: "rgb(4, 21, 88)",
                 fontFamily: "Lato",

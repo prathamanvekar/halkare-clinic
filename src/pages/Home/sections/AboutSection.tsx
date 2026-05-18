@@ -138,31 +138,6 @@ export default function AboutSection() {
               We have equally dedicated and loyal auxiliary staff. Senior most
               staff are 20+ years with us & others are 12+ years with us.
             </p>
-            <div style={{ marginTop: "24px" }}>
-              <a
-                href="#"
-                style={{
-                  color: "rgb(4, 21, 88)",
-                  fontFamily: "Lato",
-                  fontSize: "15px",
-                  fontWeight: "400",
-                  lineHeight: "15px",
-                  backgroundColor: "rgb(248, 205, 9)",
-                  borderRadius: "8px",
-                  border: "0px none rgb(4, 21, 88)",
-                  padding: "12px 24px",
-                  textAlign: "center",
-                  animation: "none 0s ease 0s 1 normal none running",
-                  display: "inline-block",
-                  textDecoration: "none",
-                  transition: "background 0.3s, transform 0.3s",
-                  cursor: "pointer",
-                }}
-                className="hover:opacity-90"
-              >
-                View More
-              </a>
-            </div>
           </div>
           <div className="w-full md:w-[45%] flex flex-col items-center">
             <div

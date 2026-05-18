@@ -88,6 +88,10 @@
   --font-mono: ui-monospace, monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .dark {
   --background: hsl(0 0% 9%);
   --foreground: hsl(0 0% 95%);

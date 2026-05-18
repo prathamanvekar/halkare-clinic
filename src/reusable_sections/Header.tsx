@@ -10,13 +10,9 @@ const menuItems = [
 ];
 
 function NavMenuContent({
-  searchOpen,
-  setSearchOpen,
   mobileOpen,
   setMobileOpen,
 }: {
-  searchOpen: boolean;
-  setSearchOpen: (open: boolean) => void;
   mobileOpen: boolean;
   setMobileOpen: (open: boolean) => void;
 }) {
@@ -31,26 +27,6 @@ function NavMenuContent({
             {item.label}
           </a>
         ))}
-        <button
-          className="search-toggle-btn"
-          aria-label="Toggle Website Search"
-          onClick={() => setSearchOpen(!searchOpen)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-        </button>
       </div>
 
       <div className="lg:hidden flex items-center">
@@ -167,7 +143,6 @@ function NavMenuContent({
 }
 
 export default function Header() {
-  const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -219,25 +194,6 @@ export default function Header() {
         .logo-img:hover {
           opacity: 0.6;
         }
-        .search-toggle-btn {
-          border-left: 1px solid rgb(241, 241, 241);
-          border-right: 1px solid rgb(241, 241, 241);
-          padding: 0 6px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          height: 88px;
-          width: 46px;
-          cursor: pointer;
-          color: rgb(74, 74, 74);
-          background: none;
-          border-top: none;
-          border-bottom: none;
-          transition: color 0.2s ease;
-        }
-        .search-toggle-btn:hover {
-          color: #13AFF0;
-        }
         .social-icon-link {
           color: #ffffff;
           display: inline-flex;
@@ -255,7 +211,9 @@ export default function Header() {
         className="w-full"
         style={{
           backgroundColor: "#1C244B",
-          height: "44px",
+          minHeight: "56px",
+          paddingTop: "6px",
+          paddingBottom: "6px",
           display: "flex",
           alignItems: "center",
         }}
@@ -270,7 +228,14 @@ export default function Header() {
             height: "100%",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px 18px",
+              flexWrap: "wrap",
+            }}
+          >
             <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -291,6 +256,7 @@ export default function Header() {
                   fontFamily: "Lato, sans-serif",
                   fontSize: "13px",
                   fontWeight: 400,
+                  whiteSpace: "nowrap",
                 }}
               >
                 (+91) 9284987903, 020-24489225
@@ -317,6 +283,7 @@ export default function Header() {
                   fontFamily: "Lato, sans-serif",
                   fontSize: "13px",
                   fontWeight: 400,
+                  whiteSpace: "nowrap",
                 }}
               >
                 drhalkaredentalclinic@gmail.com
@@ -419,8 +386,6 @@ export default function Header() {
           </div>
 
           <NavMenuContent
-            searchOpen={searchOpen}
-            setSearchOpen={setSearchOpen}
             mobileOpen={mobileOpen}
             setMobileOpen={setMobileOpen}
           />

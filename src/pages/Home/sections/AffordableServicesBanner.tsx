@@ -127,7 +127,7 @@ export default function AffordableServicesBanner() {
       >
         <div
           className="flex flex-col md:flex-row items-center justify-between"
-          style={{ gap: "0px" }}
+          style={{ gap: "24px" }}
         >
           <div
             className={`flex-1 flex items-center justify-center transition-all duration-700 ${
@@ -153,13 +153,11 @@ export default function AffordableServicesBanner() {
           </div>
 
           <div
-            className={`shrink-0 flex items-start justify-center transition-all duration-700 ${
+            className={`shrink-0 flex items-start justify-center transition-all duration-700 mt-6 mb-0 md:mt-[-80px] md:mb-[-80px] ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{
               transitionDelay: "200ms",
-              marginTop: "-80px",
-              marginBottom: "-80px",
               zIndex: 3,
               position: "relative",
             }}
@@ -169,7 +167,7 @@ export default function AffordableServicesBanner() {
               alt="Team of experienced dentists at Dr. Halkare Dental Clinic"
               className="h-auto"
               style={{
-                width: "390px",
+                width: "360px",
                 maxWidth: "100%",
                 display: "block",
                 borderRadius: "22px",
