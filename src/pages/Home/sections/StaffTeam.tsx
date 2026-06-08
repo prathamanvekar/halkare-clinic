@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import staff from "@/assets/staff1.jpg";
+import staff from "@/assets/staff4.jpeg";
 
 export default function StaffTeamSection() {
   const ref = useRef(null);

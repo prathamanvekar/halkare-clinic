@@ -5,7 +5,7 @@ import doctor2 from "@/assets/Pradnya Halkare.jpg";
 import doctor3 from "@/assets/Janardan.jpg";
 import doctor4 from "@/assets/Rajaganesh Gautam.jpg";
 import doctor5 from "@/assets/Bilal Shaikh.jpg";
-import doctor6 from "@/assets/Fardin.jpg";
+import doctor6 from "@/assets/Dr Payal Kothari.jpeg";
 import doctor7 from "@/assets/Anirudha Kajale.jpg";
 import doctor8 from "@/assets/Apoorva Saraf.jpg";
 
@@ -38,7 +38,7 @@ const doctors = [
   },
   {
     photo: doctor6,
-    name: "Dr. Fardin",
+    name: "Dr. Payal Kothari",
     specialty: "Paedodontist ( child teeth specialist)",
   },
   {

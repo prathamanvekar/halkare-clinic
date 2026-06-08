@@ -7,7 +7,7 @@ import aboutus5 from "@/assets/aboutus5.jpg";
 import aboutus6 from "@/assets/aboutus6.jpg";
 import aboutus7 from "@/assets/aboutus7.jpg";
 import ndImage from "@/assets/nd.jpg";
-import staff1Image from "@/assets/staff1.jpg";
+import staff1Image from "@/assets/staff3.jpeg";
 import teamImage from "@/assets/team.jpg";
 
 export default function ImageGallery() {

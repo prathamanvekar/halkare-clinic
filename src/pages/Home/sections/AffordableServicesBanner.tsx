@@ -153,7 +153,7 @@ export default function AffordableServicesBanner() {
           </div>
 
           <div
-            className={`shrink-0 flex items-start justify-center transition-all duration-700 mt-6 mb-0 md:mt-[-80px] md:mb-[-80px] ${
+            className={`shrink-0 flex items-start justify-center transition-all duration-700 mt-6 mb-0 md:-mt-20 md:-mb-20 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{
