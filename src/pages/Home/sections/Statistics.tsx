@@ -16,7 +16,7 @@ export default function StatisticsSection() {
   }, []);
 
   const stats = [
-    { number: "28+", label: "Years of Experience" },
+    { number: "30+", label: "Years of Experience" },
     { number: "20,000+", label: "Consultation" },
     { number: "10+", label: "Doctors Associated" },
     { number: "5,000+", label: "Surgeries" },
