@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import visitingCardPdf from "@/assets/Dr.-Halkare-Dental-Clinic.pdf";
+import visitingCardPdf from "@/assets/Dr. Halkare Dental Clinic New.pdf";
 
 export default function TaglineBanner() {
   const ref = useRef(null);
