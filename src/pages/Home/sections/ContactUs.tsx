@@ -1,5 +1,5 @@
 import staffbg from "@/assets/staff2.jpg";
-import visitingCardPdf from "@/assets/Dr.-Halkare-Dental-Clinic.pdf";
+import visitingCardPdf from "@/assets/Visiting Card.pdf";
 
 export default function ContactUsSection() {
   return (
@@ -297,7 +297,7 @@ export default function ContactUsSection() {
         <div className="flex justify-center mt-10">
           <a
             href={visitingCardPdf}
-            download="Dr.-Halkare-Dental-Clinic.pdf"
+            download="Dr.Halkare Dental Clinic Visiting Card.pdf"
             className="visiting-card-btn inline-flex items-center gap-2 cursor-pointer"
             style={{
               color: "rgb(8, 8, 8)",

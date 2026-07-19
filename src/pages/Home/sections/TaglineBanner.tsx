@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import visitingCardPdf from "@/assets/Dr. Halkare Dental Clinic New.pdf";
+import visitingCardPdf from "@/assets/Visiting Card.pdf";
 
 export default function TaglineBanner() {
   const ref = useRef(null);
@@ -57,7 +57,7 @@ export default function TaglineBanner() {
           <div className="mt-5 md:mt-6 flex justify-center">
             <a
               href={visitingCardPdf}
-              download="Dr.-Halkare-Dental-Clinic.pdf"
+              download="Dr.Halkare Dental Clinic Visiting Card.pdf"
               style={{
                 color: "rgb(245, 240, 240)",
                 fontFamily: "Lato",
