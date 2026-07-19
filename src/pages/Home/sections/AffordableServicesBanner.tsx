@@ -33,6 +33,25 @@ export default function AffordableServicesBanner() {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Lato:wght@400;700&display=swap');
+        .affordable-team-img-container {
+          overflow: hidden;
+          border-radius: 22px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+          transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .affordable-team-img-container:hover {
+          box-shadow: 0 26px 50px rgba(0, 0, 0, 0.35);
+          transform: translateY(-4px);
+        }
+        .affordable-team-img {
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .affordable-team-img-container:hover .affordable-team-img {
+          transform: scale(1.04) translateZ(0);
+        }
       `}</style>
 
       <div
@@ -162,18 +181,13 @@ export default function AffordableServicesBanner() {
               position: "relative",
             }}
           >
-            <img
-              src={team}
-              alt="Team of experienced dentists at Dr. Halkare Dental Clinic"
-              className="h-auto"
-              style={{
-                width: "360px",
-                maxWidth: "100%",
-                display: "block",
-                borderRadius: "22px",
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.25)",
-              }}
-            />
+            <div className="affordable-team-img-container" style={{ width: "360px", maxWidth: "100%" }}>
+              <img
+                src={team}
+                alt="Team of experienced dentists at Dr. Halkare Dental Clinic"
+                className="affordable-team-img h-auto w-full block"
+              />
+            </div>
           </div>
         </div>
       </div>

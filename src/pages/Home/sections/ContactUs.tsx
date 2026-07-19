@@ -20,12 +20,20 @@ export default function ContactUsSection() {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Lato:wght@300;400;500;700;800&display=swap');
-        .visiting-card-btn:hover {
-          transform: scale(1.05);
-          opacity: 0.92;
-        }
         .visiting-card-btn {
-          transition: transform 0.3s, opacity 0.3s;
+          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, opacity 0.25s ease !important;
+          box-shadow: 0 4px 14px rgba(214, 163, 14, 0.35);
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .visiting-card-btn:hover {
+          transform: translateY(-2px) scale(1.05) !important;
+          box-shadow: 0 8px 22px rgba(214, 163, 14, 0.5) !important;
+          opacity: 1 !important;
+        }
+        .visiting-card-btn:active {
+          transform: translateY(0) scale(0.97) !important;
         }
       `}</style>
 

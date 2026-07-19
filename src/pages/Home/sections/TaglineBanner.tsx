@@ -30,7 +30,23 @@ export default function TaglineBanner() {
       }}
       className="w-full pt-7.5 md:pt-12.5"
     >
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');`}</style>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+        .tagline-btn {
+          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
+          box-shadow: 0 4px 14px rgba(134, 40, 250, 0.35);
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .tagline-btn:hover {
+          transform: translateY(-2px) scale(1.05) !important;
+          box-shadow: 0 8px 22px rgba(134, 40, 250, 0.5) !important;
+        }
+        .tagline-btn:active {
+          transform: translateY(0) scale(0.97) !important;
+        }
+      `}</style>
       <div className="page-container">
         <div
           ref={ref}
@@ -58,31 +74,23 @@ export default function TaglineBanner() {
             <a
               href={visitingCardPdf}
               download="Dr.Halkare Dental Clinic Visiting Card.pdf"
+              className="tagline-btn"
               style={{
                 color: "rgb(245, 240, 240)",
                 fontFamily: "Lato",
                 fontSize: "15px",
-                fontWeight: "400",
+                fontWeight: "600",
                 lineHeight: "15px",
                 backgroundColor: "rgb(134, 40, 250)",
-                borderRadius: "3px",
+                borderRadius: "4px",
                 border: "0px none rgb(245, 240, 240)",
                 padding: "12px 24px",
                 textAlign: "center",
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "7px",
-                transition: "transform 0.3s",
+                gap: "8px",
                 textDecoration: "none",
                 cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.transform =
-                  "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.transform =
-                  "scale(1)";
               }}
             >
               <span

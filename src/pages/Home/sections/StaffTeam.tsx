@@ -29,7 +29,28 @@ export default function StaffTeamSection() {
         backgroundColor: "rgb(245, 244, 240)",
       }}
     >
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Lato:wght@400;700&family=Poppins:wght@400;600&display=swap');`}</style>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Lato:wght@400;700&family=Poppins:wght@400;600&display=swap');
+        .staff-img-container {
+          overflow: hidden;
+          border-radius: 18px;
+          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+          transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .staff-img-container:hover {
+          box-shadow: 0 22px 42px rgba(0, 0, 0, 0.22);
+          transform: translateY(-4px);
+        }
+        .staff-img {
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .staff-img-container:hover .staff-img {
+          transform: scale(1.04) translateZ(0);
+        }
+      `}</style>
 
       <div
         style={{
@@ -91,16 +112,13 @@ export default function StaffTeamSection() {
           }`}
         >
           <div className="w-full md:w-1/2 flex justify-center md:justify-start">
-            <img
-              src={staff}
-              alt="Staff team at Dr. Halkare Dental Clinic"
-              className="w-full h-auto"
-              style={{
-                maxWidth: "525px",
-                borderRadius: "18px",
-                boxShadow: "0 16px 32px rgba(0, 0, 0, 0.15)",
-              }}
-            />
+            <div className="staff-img-container" style={{ maxWidth: "525px" }}>
+              <img
+                src={staff}
+                alt="Staff team at Dr. Halkare Dental Clinic"
+                className="staff-img w-full h-auto"
+              />
+            </div>
           </div>
 
           <div className="w-full md:w-1/2 flex flex-col items-center text-center">

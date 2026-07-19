@@ -169,6 +169,7 @@ export default function Header() {
           100% { opacity: 1; }
         }
         .nav-link-item {
+          position: relative;
           font-size: 10px;
           font-weight: 600;
           letter-spacing: 2px;
@@ -181,29 +182,61 @@ export default function Header() {
           display: inline-flex;
           align-items: center;
           height: 88px;
-          transition: color 0.2s ease;
+          transition: color 0.25s ease;
           cursor: pointer;
           white-space: nowrap;
+        }
+        .nav-link-item::after {
+          content: '';
+          position: absolute;
+          bottom: 24px;
+          left: 14px;
+          right: 14px;
+          height: 2px;
+          background-color: #13AFF0;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 1px;
         }
         .nav-link-item:hover {
           color: #13AFF0;
         }
+        .nav-link-item:hover::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
         .logo-img {
-          transition: opacity 0.3s ease-in-out;
+          transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease-in-out;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
         }
         .logo-img:hover {
-          opacity: 0.6;
+          opacity: 0.85;
+          transform: scale(1.04);
         }
         .social-icon-link {
           color: #ffffff;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          transition: opacity 0.2s ease;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.12);
           text-decoration: none;
+          transition: background-color 0.2s ease, transform 0.2s ease;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
         }
         .social-icon-link:hover {
-          opacity: 0.7;
+          background-color: rgba(255, 255, 255, 0.24);
+          transform: scale(1.08);
+        }
+        .social-icon-link:active {
+          transform: scale(0.96);
         }
       `}</style>
 
@@ -301,12 +334,12 @@ export default function Header() {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#ffffff"
-                strokeWidth="2"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >

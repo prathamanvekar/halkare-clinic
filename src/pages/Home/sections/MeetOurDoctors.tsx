@@ -93,13 +93,31 @@ export default function MeetOurDoctors() {
         @keyframes slide {
           100% { transform: translateX(1.3em); }
         }
-        .doctor-card-img {
+        .doctor-card-img-wrapper {
           border-radius: 12px;
-          object-fit: cover;
+          overflow: hidden;
           width: 100%;
           aspect-ratio: 248 / 260;
           border: 2px solid rgba(255, 255, 255, 0.35);
           box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+          transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .doctor-card:hover .doctor-card-img-wrapper {
+          border-color: #13AFF0;
+          box-shadow: 0 16px 32px rgba(19, 175, 240, 0.3);
+          transform: translateY(-4px);
+        }
+        .doctor-card-img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .doctor-card:hover .doctor-card-img {
+          transform: scale(1.08) translateZ(0);
         }
       `}</style>
 
@@ -149,22 +167,24 @@ export default function MeetOurDoctors() {
         </div>
 
         <div className="flex flex-col gap-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-7">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-7 mb-10">
             {doctors.slice(0, 4).map((doctor, index) => (
               <div
                 key={doctor.name}
-                className={`flex flex-col items-center transition-all duration-700 ${
+                className={`doctor-card flex flex-col items-center transition-all duration-700 ${
                   visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: `${index * 120}ms` }}
               >
-                <img
-                  src={doctor.photo}
-                  alt={doctor.name}
-                  className="doctor-card-img w-full h-auto"
-                />
+                <div className="doctor-card-img-wrapper">
+                  <img
+                    src={doctor.photo}
+                    alt={doctor.name}
+                    className="doctor-card-img"
+                  />
+                </div>
                 <h3
                   style={{
                     color: "rgb(255, 255, 255)",
@@ -201,18 +221,20 @@ export default function MeetOurDoctors() {
             {doctors.slice(4, 8).map((doctor, index) => (
               <div
                 key={doctor.name}
-                className={`flex flex-col items-center transition-all duration-700 ${
+                className={`doctor-card flex flex-col items-center transition-all duration-700 ${
                   visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: `${(index + 4) * 120}ms` }}
               >
-                <img
-                  src={doctor.photo}
-                  alt={doctor.name}
-                  className="doctor-card-img w-full h-auto"
-                />
+                <div className="doctor-card-img-wrapper">
+                  <img
+                    src={doctor.photo}
+                    alt={doctor.name}
+                    className="doctor-card-img"
+                  />
+                </div>
                 <h3
                   style={{
                     color: "rgb(255, 255, 255)",

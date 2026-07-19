@@ -129,6 +129,28 @@ export default function WhyChooseUs() {
           padding-left: 24px;
         }
 
+        .why-item-row {
+          padding: 10px 16px;
+          border-radius: 12px;
+          transition: background-color 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+          margin-left: -16px;
+          margin-right: -16px;
+        }
+        .why-item-row:hover {
+          background-color: rgba(255, 255, 255, 0.8);
+          transform: translateX(6px);
+          box-shadow: 0 6px 20px rgba(28, 36, 75, 0.08);
+        }
+        .why-item-icon {
+          transition: transform 0.25s ease, color 0.25s ease;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .why-item-row:hover .why-item-icon {
+          transform: scale(1.18) translateZ(0);
+          color: #13AFF0 !important;
+        }
         .why-item-icon svg {
           width: 32px;
           height: 32px;
@@ -146,7 +168,7 @@ export default function WhyChooseUs() {
         }}
       />
 
-      <div className="why-choose-watermark-since">Since 1996</div>
+      <div className="why-choose-watermark-since">SINCE 1996</div>
       <div className="why-choose-watermark-tagline">
         Ethic &middot; Empathy &middot; Efficiency
       </div>
@@ -183,7 +205,7 @@ export default function WhyChooseUs() {
             {items.map((item, idx) => (
               <div
                 key={idx}
-                className={`flex flex-row items-start transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                className={`why-item-row flex flex-row items-start transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
                 style={{ gap: "18px", transitionDelay: `${idx * 60}ms` }}
               >
                 <span

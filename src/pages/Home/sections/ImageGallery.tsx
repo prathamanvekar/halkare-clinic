@@ -42,9 +42,21 @@ export default function ImageGallery() {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap');
+        .gallery-item {
+          overflow: hidden;
+          position: relative;
+        }
         .gallery-tile {
-          border: 4px solid #ffffff;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+          border: 3px solid #ffffff;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .gallery-item:hover .gallery-tile {
+          transform: scale(1.08) translateZ(0);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
         }
       `}</style>
 
@@ -105,7 +117,7 @@ export default function ImageGallery() {
                 overflow: "hidden",
                 cursor: "pointer",
               }}
-              className="transition-opacity duration-300 hover:opacity-90"
+              className="gallery-item block overflow-hidden cursor-pointer"
             >
               <img
                 src={img.src}

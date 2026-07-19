@@ -43,6 +43,9 @@ export default function InstagramFollowSection() {
         }
         .follow-btn {
           transition: opacity 0.3s, transform 0.3s;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
         }
       `}</style>
 

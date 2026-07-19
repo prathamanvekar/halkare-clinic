@@ -63,6 +63,17 @@ export default function OurServicesSection() {
         .fade-in-up-hidden {
           opacity: 0;
         }
+        .service-item {
+          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+          cursor: default;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          will-change: transform;
+        }
+        .service-item:hover {
+          color: #13AFF0 !important;
+          transform: translateY(-3px) scale(1.04);
+        }
       `}</style>
 
       <div
@@ -138,6 +149,7 @@ export default function OurServicesSection() {
               {leftServices.map((service) => (
                 <p
                   key={service}
+                  className="service-item"
                   style={{
                     color: "rgb(49, 60, 111)",
                     fontFamily: "Lato",
@@ -161,6 +173,7 @@ export default function OurServicesSection() {
               {rightServices.map((service) => (
                 <p
                   key={service}
+                  className="service-item"
                   style={{
                     color: "rgb(49, 60, 111)",
                     fontFamily: "Lato",
